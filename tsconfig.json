@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "module": "CommonJS",
     "target": "ES6",
     "outDir": "./dist",
@@ -14,12 +15,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./*"]
-    }
+      "~/*": ["./*"]
+    },
   },
-  "include": ["./src", "config/logger.ts"],
   "exclude": [
     "**/*.test.*",
     "**/__mocks__/*",

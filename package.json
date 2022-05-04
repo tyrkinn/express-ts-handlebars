@@ -5,10 +5,11 @@
   "main": "www/main.ts",
   "scripts": {
     "test": "jest",
-    "start": "ts-node www/main.ts",
-    "dev": "ts-node-dev www/main.ts",
+    "start": "ts-node -r tsconfig-paths/register www/main.ts",
+    "dev": "concurrently --kill-others \"ts-node-dev -r tsconfig-paths/register www/main.ts\" \"pnpm run tailwind:css\"",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "tailwind:css": "postcss -w ./styles/tailwind.css -o ./styles/styles.css"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.1",
-    "express-handlebars": "^6.0.5",
+    "pug": "^3.0.2",
+    "reflect-metadata": "^0.1.13",
     "winston": "^3.7.2"
   },
   "devDependencies": {
@@ -42,6 +44,8 @@
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
+    "autoprefixer": "^10.4.7",
+    "concurrently": "^7.1.0",
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -49,14 +53,19 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^28.0.3",
     "nodemon": "^2.0.16",
+    "postcss": "^8.4.13",
+    "postcss-cli": "^9.1.0",
     "prettier": "^2.6.2",
     "prettier-eslint": "^14.0.2",
     "supertest": "^6.2.3",
+    "tailwindcss": "^3.0.24",
     "ts-jest": "^28.0.0",
     "ts-node": "^10.7.0",
     "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^4.0.0",
     "typescript": "^4.6.4"
   }
 }
