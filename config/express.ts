@@ -15,9 +15,6 @@ app.use(express.urlencoded({ extended: false }));
 app.engine('hbs', hbsConfig.engine);
 app.set('view engine', 'hbs');
 app.set('views', 'views');
-
-app.get('/', (_, res) => {
-  res.render('index');
-});
+app.set('port', process.env.PORT ?? 3000);
 
 export default app;

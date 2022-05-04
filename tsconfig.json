@@ -16,10 +16,10 @@
     "removeComments": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./*"]
     }
   },
-  "include": ["./src"],
+  "include": ["./src", "config/logger.ts"],
   "exclude": [
     "**/*.test.*",
     "**/__mocks__/*",
