@@ -1,10 +1,10 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="styles/styles.css")
-    title My Express Pug app
-  body 
-   h1.text-2xl.font-bold.text-green-900 Hello World
+//- Inherits from main loyout
+extends layouts/main.pug
+
+//- Content part. Everything from this file goes into body tag
+block content
+  h1.text-green-900.font-bold.text-2xl Hello World
+
+//- Page title. You can also append head with meta into this block 
+block title
+  title Index page
